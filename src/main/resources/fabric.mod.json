@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "luna-framework",
+  "version": "${version}",
+  "name": "Luna Framework",
+  "description": "The Luna Scripting Framework is a framework developed to allow the use of Lua for extending the functionality of mods.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/luna-framework/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.silkmc.lunaFramework.client.LunaFrameworkClient"
+    ],
+    "main": [
+      "org.silkmc.lunaFramework.LunaFramework"
+    ]
+  },
+  "mixins": [
+    "luna-framework.mixins.json",
+    {
+      "config": "luna-framework.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
